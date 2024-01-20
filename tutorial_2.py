@@ -18,6 +18,11 @@ class Layer:
     def forward(self, inputs):
         self.output = np.dot(inputs, self.weights) + self.biases
     
+
+class Activation_ReLU:
+    def forward(self, inputs):
+        self.output = np.maximum(0, inputs)
+
 layer1 = Layer(4,5) # first layer has 5 neurons receiving 4 inputs from its sample/batch
 layer2 = Layer(5,2) # second layer has 2 neurons receiving 5 inputs from the previous layer
 
